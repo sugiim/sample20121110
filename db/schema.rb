@@ -11,13 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121110032124) do
+ActiveRecord::Schema.define(:version => 20121222021300) do
 
   create_table "bookmarks", :force => true do |t|
     t.string   "name"
     t.string   "url"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "events", :force => true do |t|
+    t.string   "team_id",         :null => false
+    t.string   "event_name",      :null => false
+    t.text     "event_desc"
+    t.date     "event_date",      :null => false
+    t.datetime "event_date_from"
+    t.datetime "event_date_to"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
 end
